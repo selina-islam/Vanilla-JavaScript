@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even and Odd Number Checker </title>
+</head>
+<body>
+   <div>
+    <!-- input field for user to enter a number -->
+    <input type="text" placeholder="enter your number" id="num">
+    <!-- button to trigger the evenodd function -->
+    <button onclick='evenodd()'>check</button>
+    <!-- paragraph to display the result -->
+   <p class="result">
+   </p>
+</div>
+   <script>
+    //  function to check if the number is even or odd
+    function evenodd(){
+        // get the value from the input field & store in a variable
+        const number= document.getElementById('num').value;
+        // select the result paragraph to display the output
+        const result = document.querySelector('.result')
+        // check if the input is empty
+        if(number === ''){
+           result.innerHTML ='Please enter a number'
+            return
+        }
+        // convert the input string to an integer
+        const num = parseInt(number)
+         // check if the input is a valid number
+        if(isNaN(num)){
+            result.innerHTML= 'Please enter digits only'
+            return
+        }
+        // check if the number is even or odd
+        if(num % 2 === 0){
+           result.innerHTML=`the number ${number} is even`
+        }else if(num % 2 !==0){
+            result.innerHTML=`the number ${number} is odd`
+        }
+    }
+   </script>
+</body>
+</html>
